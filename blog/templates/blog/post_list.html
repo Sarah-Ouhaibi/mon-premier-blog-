@@ -1,0 +1,47 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+<div class="row">
+        <div class="side">
+          <h2>VOITURES</h2>
+          {% for character in characters %}
+                <h3>{{ character.id_character }}</h3>
+                <img src="{{ character.photo }}" class="center">
+                <h5><b>Modèle :</b> <i>{{ character.modele }}</i></h5>
+                <h5><b>Marque :</b> <i>{{ character.marque |linebreaksbr }}</i></h5>
+                <h5><b>Etat :</b> <i>{{ character.etat |linebreaksbr }}</i></h5>
+                <h5><b>Lieu :</b> <i>{{ character.lieu |linebreaksbr }}</i><h5>
+                <button class="button button5"><a href="{% url 'post_detail' id_character=character.id_character %}">Modifier le lieu</a></button>
+                <button class="button button5" onclick="updateEtat('{{ character.id_character }}', '{{ character.lieu.id_equip }}')">Mettre à jour l'état</button>
+                <hr>
+          {% endfor %}
+        </div>
+
+    <script>
+        function updateEtat(character_id, place_id) {
+            fetch(`/maj_etat/${character_id}/${place_id}/`)
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error('Erreur lors de la requête AJAX :', error));
+    }
+    </script>
+
+
+
+        <div class="main">
+          <h2>ÉQUIPEMENTS</h2>
+          {% for equip in equipements %}
+                <h3>{{ equip.id_equip }}</h3>
+                <img src="{{ equip.photo }}" class="center">
+                {% if equip.disponibilite == 'libre' %}
+                        <h4 style="color:green;"><b>Disponibilité : </b><i>{{ equip.disponibilite |linebreaksbr }}</i></h4>
+                {% endif %}
+                {% if equip.disponibilite == 'occupé' %}
+                        <h4 style="color:red;"><b>Disponibilité : </b><i>{{ equip.disponibilite |linebreaksbr }}</i></h4>
+                {% endif %}
+                <hr>
+          {% endfor %}
+      </div>
+</div>
+{% endblock %}

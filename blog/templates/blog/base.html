@@ -1,0 +1,49 @@
+{% load static %}
+<html>
+    <head>
+        <title>Les 24h de Marseille</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Blippo&display=swap">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+
+        <script>
+        window.onload = function() {
+            alert("Attention, pour changer l'état d'une voiture, cliquez sur le bouton 'Mettre à jour l'état', puis actualisez la page.");
+        };
+    </script>
+    </head>
+
+    <body>
+
+
+        <div class="header">
+            <h1>Bienvenue aux</h1>
+            <img src="https://media.licdn.com/dms/image/C4E0BAQEAv7q1MrxEDg/company-logo_200_200/0/1678701877646/fondation_centrale_mediterranee_logo?e=1707955200&v=beta&t=n4MFpjrU_Wx-gLl919wpU-QwFqjwfbObvvM04xLJcYA" alt="Logo de C.Med" class="logo">
+            <h1><a href="/">24h de Marseille !</a></h1>
+            <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/8/82/Ville_de_Marseille_%28logo%29.svg/120px-Ville_de_Marseille_%28logo%29.svg.png?20130307190028" alt="Logo Marseille" class="logo-marseille">
+          </div>
+
+            {% block content %}
+            {% endblock %}
+
+    <h2>NOS SPONSORS</h2>
+          <br>
+          <h3>R2CM</h3>
+          <img src="https://media.licdn.com/dms/image/C4E0BAQEgXqEsqHmYkw/company-logo_200_200/0/1676055645892/racing_club_de_centrale_marseille_logo?e=1708560000&v=beta&t=Z4kRG8ryV3Zwg8jHOyLFLZmsht2j9fvm6VJEU_T2wwE" class="R2CM_logo">
+          <br>
+          <h3>FEU VERT</h3>
+          <img src="https://i.ebayimg.com/images/g/k0UAAOSwoLpfGcxL/s-l1600.webp" class="feuvert_logo">
+
+
+    </body>
+
+    <footer>
+        <div class="footer">
+            <p>Réalisé par Sarah Ouhaibi</p>
+          </div>
+    </footer>
+
+
+</html>
+

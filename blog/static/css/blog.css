@@ -1,0 +1,119 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Blippo', fantasy;
+    background-color: #D3D3D3
+}
+
+.header {
+    position: relative;
+    text-align: center;
+    background-position: center center;
+    background-image: url('https://www.usinenouvelle.com/mediatheque/5/9/3/000766395_896x598_c.jpg');
+    background-size: cover;
+    color: white;
+    padding: 80px 0;
+}
+
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 50px;
+    height: auto;
+}
+
+.logo-marseille {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 120px;
+    height: auto;
+}
+
+.footer {
+    text-align: center;
+    background: #ddd;
+    padding: 20px;
+}
+
+.side, .main h3, .main h4 {
+    margin-left: 20px;
+}
+
+.side h2, .main h2, h2 {
+    text-align: center;
+    color: white;
+    background-color: #000000;
+    padding: 10px;
+}
+
+.side h4, h4 {
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+    h5 {
+        font-size: 24px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    h5 {
+        font-size: 28px;
+    }
+    h3 {
+        font-size: 38px;
+    }
+}
+
+
+.button {
+    background-color: #555555;
+    color: lightgrey;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.button:hover {
+    background-color: #333;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border-radius: 30px;
+}
+
+h3 {
+    color: black;
+    text-align: center;
+}
+
+.R2CM_logo {
+    width: 80px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+}
+.feuvert_logo {
+    width: 150px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

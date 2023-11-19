@@ -1,0 +1,29 @@
+{% extends 'blog/base.html' %}
+
+{% load static %}
+{% block content %}
+
+<div class="fakediv">
+    <h3>{{ character.id_character }}</h3>
+    <br>
+    <img src="{{ character.photo }}" class="center">
+    <br>
+    <form method="POST" class="post-form">{% csrf_token %}
+       <b> Changer  </b> {{ form.as_ul }}
+    <button class="button button5" type="submit">Ok</button>
+    <br>
+    {% if message == "La modification est impossible." %}
+        <div class="alert alert-danger" role="alert">
+            {{message}}
+        </div>
+    {% elif message == "La modification est bien enregistrée!" %}
+        <div class="alert alert-success" role="alert">
+            {{message}}
+        </div>
+    {% endif %}
+    <br>
+    <button class="button button5"><a href="{% url 'post_list' %}">Back</a></button>
+    </form>
+</div>
+
+{% endblock %}
